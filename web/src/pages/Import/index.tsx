@@ -9,6 +9,7 @@ import Upload from '../../components/Upload';
 
 import { Container, Title, ImportFileContainer, Footer } from './styles';
 
+import {useAuth} from '../../hooks/AuthContext';
 import alert from '../../assets/alert.svg';
 import api from '../../services/api';
 
@@ -21,7 +22,8 @@ interface FileProps {
 const Import: React.FC = () => {
   const [uploadedFiles, setUploadedFiles] = useState<FileProps[]>([]);
   const history = useHistory();
-
+  const auth = useAuth();
+  
   async function handleUpload(): Promise<void> {
     const data = new FormData();
 
@@ -32,7 +34,12 @@ const Import: React.FC = () => {
     data.append('file', file.file, file.name);
 
     try {
-      await api.post('/transactions/import', data);
+      console.log('tentando');
+      await api.post('/transactions/import', data,{
+        headers:{
+          Authorization: `Bearer ${auth.token}`
+        }
+      });
       history.push('/');
     } catch (err) {
       console.log(err.response.error);
