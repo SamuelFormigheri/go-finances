@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import {FiTrash2} from 'react-icons/fi';
 
-
-import income from '../../assets/income.svg';
-import outcome from '../../assets/outcome.svg';
-import total from '../../assets/total.svg';
-import api from '../../services/api';
-import Header from '../../components/Header';
-import formatValue from '../../utils/formatValue';
-import unformatValue from '../../utils/unformatValue';
+import income from '~/assets/income.svg';
+import outcome from '~/assets/outcome.svg';
+import total from '~/assets/total.svg';
+import api from '~/services/api';
+import Header from '~/components/Header';
+import formatValue from '~/utils/formatValue';
+import unformatValue from '~/utils/unformatValue';
 
 
 import { Container, CardContainer, Card, TableContainer } from './styles';
-import ModalCreateTransaction from '../../components/Modal/ModalCreateTransaction';
+import ModalCreateTransaction from '~/components/Modal/ModalCreateTransaction';
 
 interface Transaction {
   id: string;
@@ -177,9 +176,9 @@ const Dashboard: React.FC = () => {
           </table>
         </TableContainer>
       </Container>
-      <ModalCreateTransaction isOpen={modalCreateTransaction}
-        setIsOpen={toggleModalCreateTransaction} afterConfirmModal={afterConfirmModal}
-      />
+        <ModalCreateTransaction isOpen={modalCreateTransaction}
+          setIsOpen={toggleModalCreateTransaction} afterConfirmModal={afterConfirmModal}
+        />
     </>
   );
 };

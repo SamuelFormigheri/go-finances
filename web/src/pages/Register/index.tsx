@@ -6,11 +6,11 @@ import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
 
-import logo from '../../assets/logo.svg';
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import api from '../../services/api';
-import getValidationErrors from '../../utils/getValidationErrors';
+import logo from '~/assets/logo.svg';
+import Input from '~/components/Input';
+import Button from '~/components/Button';
+import api from '~/services/api';
+import getValidationErrors from '~/utils/getValidationErrors';
 
 
 import { Container, Content, Background, AnimationContainer } from './styles';

@@ -1,0 +1,15 @@
+.ReactModal__Overlay div{
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open div{
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close div{
+  opacity: 0;
+  transform: translateY(-40px);
+}

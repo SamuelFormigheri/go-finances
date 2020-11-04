@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import ReactModal from 'react-modal';
 
+import './styles.css';
 
 interface IModalProps {
     children: any;
     isOpen: boolean;
     setIsOpen: () => void;
 }
+
 
 const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
   const [modalStatus, setModalStatus] = useState(isOpen);
@@ -21,6 +23,7 @@ const Modal: React.FC<IModalProps> = ({ children, isOpen, setIsOpen }) => {
       onRequestClose={setIsOpen}
       isOpen={modalStatus}
       ariaHideApp={false}
+      closeTimeoutMS={300}
       style={{
         content: {
           top: '50%',

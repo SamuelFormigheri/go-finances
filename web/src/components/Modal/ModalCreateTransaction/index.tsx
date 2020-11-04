@@ -6,12 +6,12 @@ import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
-import Input from '../../Input';
-import Button from '../../Button';
-import Modal from '../../Modal';
+import Input from '~/components/Input';
+import Button from '~/components/Button';
+import Modal from '~/components/Modal';
 import { Container, ModalHeader } from './styles';
-import getValidationErrors from '../../../utils/getValidationErrors';
-import api from '../../../services/api';
+import getValidationErrors from '~/utils/getValidationErrors';
+import api from '~/services/api';
 
 
 interface IFormSubmitContent{
